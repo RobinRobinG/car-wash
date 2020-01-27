@@ -1,18 +1,33 @@
-/**
- * Layout component that queries for data
- * with Gatsby's useStaticQuery component
- *
- * See: https://www.gatsbyjs.org/docs/use-static-query/
- */
+import React, { Fragment } from 'react'
+import { useStaticQuery, graphql } from 'gatsby'
+import { useWeather } from '../custom-hooks/useWeather'
+import Header from './header/header'
+import Main from './main/main'
+import WeatherForecast from './weather-forecast/weather-forecast'
+import Footer from './footer/footer'
+import './layout.css'
 
-import React from "react"
-import PropTypes from "prop-types"
-import { useStaticQuery, graphql } from "gatsby"
+function getResult(weather) {
+  const { list } = weather
+  if (!list) {
+    return 'Loading...'
+  }
 
-import Header from "./header"
-import "./layout.css"
+  let result = 'Yes'
+  for (let i = 0; i < list.length; i++) {
+    const item = list[i].weather[0].main
+    if (item === 'Rain' || item === 'Snow' || item === 'Extreme') {
+      result = 'No'
+      break
+    }
+  }
 
-const Layout = ({ children }) => {
+  return result
+}
+
+function Layout() {
+  const { weather } = useWeather()
+
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
@@ -23,29 +38,16 @@ const Layout = ({ children }) => {
     }
   `)
 
-  return (
-    <>
-      <Header siteTitle={data.site.siteMetadata.title} />
-      <div
-        style={{
-          margin: `0 auto`,
-          maxWidth: 960,
-          padding: `0 1.0875rem 1.45rem`,
-        }}
-      >
-        <main>{children}</main>
-        <footer>
-          © {new Date().getFullYear()}, Built with
-          {` `}
-          <a href="https://www.gatsbyjs.org">Gatsby</a>
-        </footer>
-      </div>
-    </>
-  )
-}
+  console.log({ weather })
 
-Layout.propTypes = {
-  children: PropTypes.node.isRequired,
+  return (
+    <Fragment>
+      <Header siteTitle={data.site.siteMetadata.title} />
+      <Main result={getResult(weather)} />
+      <WeatherForecast weather={weather} />
+      <Footer />
+    </Fragment>
+  )
 }
 
 export default Layout

@@ -1,0 +1,35 @@
+.header {
+  background: #3b6e22;
+  box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.5);
+  position: relative;
+
+  .container {
+    margin: 0 auto;
+    max-width: 960px;
+    padding: 1rem 2rem;
+    vertical-align: middle;
+  }
+
+  .logo {
+    display: inline-block;
+    width: 35px;
+    height: auto;
+    margin-right: 10px;
+    svg {
+      fill: white;
+    }
+  }
+
+  h1 {
+    display: inline-block;
+    vertical-align: super;
+    font-size: 18pt;
+    font-weight: 500;
+    margin: 0;
+  }
+
+  .link {
+    color: white;
+    text-decoration: none;
+  }
+}
