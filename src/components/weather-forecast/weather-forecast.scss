@@ -4,9 +4,14 @@
     max-width: 960px;
     padding: 1rem 2rem;
 
-    span {
+    h4 {
       color: #ccc;
-      font-weight: 400;
+      font-weight: 500;
+      margin-bottom: 0.5rem;
+    }
+
+    table {
+      margin-bottom: 0;
     }
 
     tbody td {

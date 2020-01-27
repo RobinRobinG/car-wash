@@ -25,7 +25,7 @@ function getResult(weather) {
   return result
 }
 
-function Layout() {
+const Layout = () => {
   const { weather } = useWeather()
 
   const data = useStaticQuery(graphql`
@@ -38,7 +38,7 @@ function Layout() {
     }
   `)
 
-  console.log({ weather })
+  // console.log({ weather })
 
   return (
     <Fragment>

@@ -5,6 +5,10 @@ const Footer = () => {
   return (
     <footer>
       <div className="container">
+        <p>
+          Definition of when to get a car wash: Five consecutive days with no
+          precipitation.
+        </p>
         <span>
           © {new Date().getFullYear()}, Built with
           {` `}

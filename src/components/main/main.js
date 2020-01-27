@@ -13,8 +13,4 @@ Main.propTypes = {
   result: PropTypes.string,
 }
 
-Main.defaultProps = {
-  result: `Yes`,
-}
-
 export default Main

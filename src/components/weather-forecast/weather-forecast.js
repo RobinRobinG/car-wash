@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import './weather-forecast.scss'
 
 function getDate(dt_txt) {
@@ -44,13 +45,17 @@ const WeatherForecast = ({ weather }) => {
   return (
     <div className="weather-forecast">
       <div className="container">
-        <span className="location">
+        <h4 className="location">
           {name} weather forecast for the next 5 days
-        </span>
+        </h4>
         {renderWeatherList(list)}
       </div>
     </div>
   )
+}
+
+WeatherForecast.propTypes = {
+  weather: PropTypes.object,
 }
 
 export default WeatherForecast

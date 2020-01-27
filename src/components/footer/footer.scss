@@ -5,7 +5,18 @@ footer {
   .container {
     margin: 0 auto;
     max-width: 960px;
-    padding: 2rem;
+    padding: 1rem 2rem;
     vertical-align: middle;
+  }
+
+  p {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #ccc;
+    margin-bottom: 0.5rem;
+    font-size: 14px;
+  }
+
+  span {
+    font-size: 14px;
   }
 }
