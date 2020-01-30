@@ -1,21 +1,53 @@
 import React from 'react'
-import { Link } from 'gatsby'
+import { useStaticQuery, graphql } from 'gatsby'
+import { useWeather } from '../custom-hooks/useWeather'
+import Header from '../components/header/header'
+import Main from '../components/main/main'
+import WeatherForecast from '../components/weather-forecast/weather-forecast'
+import Footer from '../components/footer/footer'
+import './index.css'
 
-import Layout from '../components/layout'
-import Image from '../components/image'
-import SEO from '../components/seo'
+function getResult(weather) {
+  const { list } = weather
+  if (!list) {
+    return 'Loading...'
+  }
 
-const IndexPage = () => (
-  <Layout>
-    <SEO title="Home" />
-    <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-      <Image />
+  let result = 'Yes'
+  for (let i = 0; i < list.length; i++) {
+    const item = list[i].weather[0].main
+    if (item === 'Rain' || item === 'Snow' || item === 'Extreme') {
+      result = 'No'
+      break
+    }
+  }
+
+  return result
+}
+
+const IndexPage = () => {
+  const { weather } = useWeather()
+
+  const data = useStaticQuery(graphql`
+    query SiteTitleQuery {
+      site {
+        siteMetadata {
+          title
+        }
+      }
+    }
+  `)
+
+  console.log({ weather })
+
+  return (
+    <div>
+      <Header siteTitle={data.site.siteMetadata.title} />
+      <Main result={getResult(weather)} />
+      <WeatherForecast weather={weather} />
+      <Footer />
     </div>
-    <Link to="/page-2/">Go to page 2</Link>
-  </Layout>
-)
+  )
+}
 
 export default IndexPage

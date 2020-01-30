@@ -1,24 +1,30 @@
 .weather-forecast {
-  .container {
-    margin: 0 auto;
-    max-width: 960px;
-    padding: 1rem 2rem;
+  h4 {
+    color: #ccc;
+    font-weight: 400;
+    margin-bottom: 0.5rem;
+    padding-top: 0.8rem;
+  }
 
-    h4 {
-      color: #ccc;
-      font-weight: 500;
-      margin-bottom: 0.5rem;
-    }
+  table {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+  }
 
-    table {
-      margin-bottom: 0;
-    }
+  thead th {
+    color: #ccc;
+    letter-spacing: 0.5px;
+  }
 
-    tbody td {
-      color: #999;
-      font-family: Arial, Helvetica, sans-serif;
-      font-weight: 500;
-      font-size: 14px;
+  tbody td {
+    color: #ccc;
+
+    &.weather-icon {
+      padding: 0;
+      img {
+        margin-bottom: 0;
+      }
     }
   }
 }

@@ -1,12 +1,13 @@
 import { Link } from 'gatsby'
 import PropTypes from 'prop-types'
 import React from 'react'
+import Container from '../container/container'
 import Logo from '../../assets/logo.svg'
 import './header.scss'
 
 const Header = ({ siteTitle }) => (
   <header className="header">
-    <div className="container">
+    <Container>
       <div className="logo">
         <Logo />
       </div>
@@ -15,7 +16,7 @@ const Header = ({ siteTitle }) => (
           {siteTitle}
         </Link>
       </h1>
-    </div>
+    </Container>
   </header>
 )
 

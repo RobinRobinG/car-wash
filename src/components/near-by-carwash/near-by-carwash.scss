@@ -1,0 +1,23 @@
+.near-by-carwash {
+  .carwash-name {
+    display: flex;
+    justify-content: space-between;
+    color: #ccc;
+
+    h4 {
+      font-weight: 500;
+      margin-bottom: 0.5rem;
+      padding-top: 0.5rem;
+    }
+
+    .carwash-rating {
+      font-weight: 400;
+      letter-spacing: 0.5px;
+    }
+  }
+
+  span.carwash-address {
+    font-size: 14px;
+    color: #999;
+  }
+}

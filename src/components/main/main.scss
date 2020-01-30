@@ -4,6 +4,10 @@
   text-align: center;
   color: white;
 
+  &.no {
+    background: #7a0026;
+  }
+
   h1 {
     font-size: 60px;
     font-weight: 500;

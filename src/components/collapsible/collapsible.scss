@@ -1,0 +1,22 @@
+.collapsible {
+  display: block;
+  padding: 0.4rem 0;
+  border-top: 1px solid #333;
+  border-bottom: 1px solid #333;
+  background-color: #363636;
+
+  .title {
+    cursor: pointer;
+    color: #fff;
+    font-weight: 500;
+    font-family: Arial, Helvetica, sans-serif;
+
+    &.open {
+      color: #00bfff;
+    }
+
+    &:focus {
+      outline: none;
+    }
+  }
+}
