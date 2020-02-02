@@ -24,9 +24,4 @@ const Collapsible = ({ title, children }) => {
   )
 }
 
-Collapsible.propTypes = {
-  title: PropTypes.string,
-  children: PropTypes.element.isRequired
-}
-
 export default Collapsible

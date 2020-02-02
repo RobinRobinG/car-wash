@@ -1,10 +1,13 @@
 import React from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
-import { useWeather } from '../custom-hooks/useWeather'
+import useFiveDayWeatherForecast from '../custom-hooks/useFiveDayWeatherForecast'
+import useCurrentWeatherForecast from '../custom-hooks/useCurrentWeatherForecast'
 import Header from '../components/header/header'
 import Main from '../components/main/main'
 import WeatherForecast from '../components/weather-forecast/weather-forecast'
+import CurrentWeather from '../components/current-weather/current-weather'
 import Footer from '../components/footer/footer'
+import 'open-weather-icons/dist/css/open-weather-icons.css'
 import './index.css'
 
 function getResult(weather) {
@@ -26,7 +29,8 @@ function getResult(weather) {
 }
 
 const IndexPage = () => {
-  const { weather } = useWeather()
+  const { weatherData: fiveDayWeatherForecast } = useFiveDayWeatherForecast()
+  const { weatherData: currentWeatherForecast } = useCurrentWeatherForecast()
 
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
@@ -38,13 +42,12 @@ const IndexPage = () => {
     }
   `)
 
-  console.log({ weather })
-
   return (
-    <div>
+    <div className="site-container">
       <Header siteTitle={data.site.siteMetadata.title} />
-      <Main result={getResult(weather)} />
-      <WeatherForecast weather={weather} />
+      <Main result={getResult(fiveDayWeatherForecast)} />
+      <CurrentWeather weatherData={currentWeatherForecast} />
+      <WeatherForecast weatherData={fiveDayWeatherForecast} />
       <Footer />
     </div>
   )

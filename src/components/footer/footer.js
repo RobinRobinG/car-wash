@@ -4,20 +4,20 @@ import './footer.scss'
 
 const Footer = () => {
   return (
-    <footer>
+    <footer className="footer">
       <Container>
-        <p className="definition">
+        <div className="definition">
           Definition of when to get a car wash: Five consecutive days with no
           precipitation.
-        </p>
-        <p>
+        </div>
+        <div>
           © {new Date().getFullYear()}, Created by
           {` `}
           <a href="https://robinrobing.github.io/">Robin Guan</a>
-        </p>
-        <p>
+        </div>
+        <div>
           Powered by <a href="https://openweathermap.org/">OpenWeather</a>
-        </p>
+        </div>
       </Container>
     </footer>
   )

@@ -1,0 +1,78 @@
+.current-weather {
+  h4 {
+    font-weight: 400;
+    margin: 0.8rem 0;
+  }
+  .weather-details {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 1rem;
+    display: flex;
+    justify-content: flex-start;
+
+    .left {
+      font-size: 50px;
+      font-weight: 100;
+      padding: 10px 20px;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+
+      .temp-and-description {
+        padding: 10px;
+        .temp {
+          font-weight: 300;
+          font-size: 30px;
+          line-height: 30px;
+        }
+        .description {
+          font-size: 14px;
+          font-weight: 400;
+        }
+      }
+    }
+    .right {
+      padding: 10px;
+      display: flex;
+      flex: 1;
+      justify-content: space-around;
+      align-items: center;
+    }
+
+    .icon {
+      font-size: 25px;
+      padding-bottom: 8px;
+    }
+    .label {
+      font-size: 14px;
+      line-height: 14px;
+      color: #d0d0d0;
+    }
+    .number {
+      font-size: 14px;
+    }
+  }
+}
+
+@media screen and (max-width: 960px) {
+  .current-weather {
+    margin-bottom: 20px;
+
+    .weather-details {
+      background: none;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: stretch;
+      border-radius: 0;
+
+      .left {
+        align-items: center;
+        padding: 10px;
+      }
+
+      .right {
+        display: flex;
+        justify-content: space-around;
+      }
+    }
+  }
+}

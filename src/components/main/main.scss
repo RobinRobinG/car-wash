@@ -1,16 +1,21 @@
 .main {
-  background: #55a331;
-  padding: 2rem;
-  text-align: center;
-  color: white;
-
-  &.no {
-    background: #7a0026;
+  .text {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 1rem;
+    padding: 1.5rem 0;
+    text-align: center;
   }
 
   h1 {
     font-size: 60px;
     font-weight: 500;
     text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+  }
+
+  h4 {
+    font-weight: 500;
+    font-size: 16px;
+    padding-bottom: 5px;
+    margin-bottom: 0;
   }
 }

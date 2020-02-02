@@ -1,0 +1,9 @@
+.today-date {
+  font-size: 14px;
+}
+
+@media screen and (max-width: 960px) {
+  .today-date {
+    margin-top: 10px;
+  }
+}

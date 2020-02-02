@@ -1,0 +1,42 @@
+.daily-forecast {
+  background: rgba(255, 255, 255, 0.2);
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 1rem;
+  padding: 0.5rem;
+  margin: 0 0.5rem;
+  font-size: 14px;
+  line-height: 22px;
+
+  &:first-child {
+    margin-left: 0;
+  }
+
+  &:last-child {
+    margin-right: 0;
+  }
+
+  .rain-volume {
+    height: 20px;
+  }
+
+  .weather-icon i {
+    font-size: 40px;
+    font-weight: 100;
+    padding: 10px;
+  }
+
+  .min-temp {
+    border-top: 1px solid #d0d0d0;
+    color: #d0d0d0;
+  }
+}
+
+@media screen and (max-width: 960px) {
+  .daily-forecast {
+    background: none;
+  }
+}

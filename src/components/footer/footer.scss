@@ -1,15 +1,13 @@
 footer {
   color: white;
   font-size: 16px;
-  padding-top: 2rem;
+  padding: 1rem 0;
   letter-spacing: 0.5px;
-  border-top: 1px solid #222;
+  background-color: #363636;
 
-  p {
-    font-family: Arial, Helvetica, sans-serif;
+  div {
     color: #ccc;
-    margin-bottom: 0.5rem;
-    font-size: 14px;
+    font-size: 12px;
     &.definition {
       margin-bottom: 1rem;
     }
