@@ -2,14 +2,14 @@ import React from 'react'
 import { format, parseISO } from 'date-fns'
 import './daily-forecast.scss'
 
-function renderMinMaxTemp(main) {
-  const { temp_min, temp_max } = main
-  const minTemp = Math.floor(temp_min)
-  const maxTemp = Math.floor(temp_max)
+function renderTemp(main) {
+  const { temp, feels_like } = main
+  const dailyTemp = Math.floor(temp)
+  const feelsLike = Math.floor(feels_like)
   return (
     <div className="min-max-temp">
-      <div className="max-temp">{maxTemp} °F</div>
-      <div className="min-temp">{minTemp} °F</div>
+      <div className="max-temp">{dailyTemp} °</div>
+      <div className="min-temp">{feelsLike} °</div>
     </div>
   )
 }
@@ -60,7 +60,7 @@ const DailyForecast = ({ dailyForecast }) => {
       {renderDate(date)}
       {rain ? renderRainVolume(rain) : <div className="rain-volume"></div>}
       {renderWeatherIcon(icon)}
-      {renderMinMaxTemp(main)}
+      {renderTemp(main)}
     </div>
   )
 }

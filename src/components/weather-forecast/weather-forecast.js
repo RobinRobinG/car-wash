@@ -22,6 +22,7 @@ function renderWeatherList(list) {
 }
 
 const WeatherForecast = ({ weatherData }) => {
+  console.log({ weatherData })
   if (!weatherData.cod) {
     return <div>Loading...</div>
   }

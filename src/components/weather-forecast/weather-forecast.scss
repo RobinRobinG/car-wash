@@ -4,18 +4,21 @@
 
   h4 {
     font-weight: 400;
-    margin: 0.8rem 0;
+    margin-bottom: 0.5rem;
   }
 
   .five-day-forecast {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
   }
 }
 
 @media screen and (max-width: 960px) {
   .weather-forecast .container {
+    h4 {
+      margin: 0.5rem 1rem;
+    }
     .five-day-forecast {
       justify-content: space-between;
     }

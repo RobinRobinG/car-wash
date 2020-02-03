@@ -1,7 +1,7 @@
 .current-weather {
   h4 {
     font-weight: 400;
-    margin: 0.8rem 0;
+    margin-bottom: 0.5rem;
   }
   .weather-details {
     background: rgba(255, 255, 255, 0.2);
@@ -10,7 +10,7 @@
     justify-content: flex-start;
 
     .left {
-      font-size: 50px;
+      font-size: 60px;
       font-weight: 100;
       padding: 10px 20px;
       display: flex;
@@ -18,14 +18,16 @@
       align-items: center;
 
       .temp-and-description {
-        padding: 10px;
+        padding-left: 15px;
+
         .temp {
-          font-weight: 300;
-          font-size: 30px;
-          line-height: 30px;
+          font-weight: 200;
+          font-size: 50px;
+          line-height: 50px;
         }
+
         .description {
-          font-size: 14px;
+          font-size: 16px;
           font-weight: 400;
         }
       }
@@ -35,7 +37,7 @@
       display: flex;
       flex: 1;
       justify-content: space-around;
-      align-items: center;
+      align-items: flex-start;
     }
 
     .icon {
@@ -49,13 +51,18 @@
     }
     .number {
       font-size: 14px;
+      span {
+        font-size: 12px;
+      }
     }
   }
 }
 
 @media screen and (max-width: 960px) {
   .current-weather {
-    margin-bottom: 20px;
+    h4 {
+      margin: 0.5rem 1rem;
+    }
 
     .weather-details {
       background: none;
@@ -66,7 +73,8 @@
 
       .left {
         align-items: center;
-        padding: 10px;
+        padding: 0;
+        margin: 0.5rem 1rem;
       }
 
       .right {

@@ -13,8 +13,12 @@ import {
 } from '@fortawesome/free-solid-svg-icons'
 import CurrentWeatherElement from '../current-weather-element/current-weather-element'
 
+function convertMeterToMile(value) {
+  return Math.floor(value / 1609)
+}
+
 function getTimeFromUnix(unixTime) {
-  return format(fromUnixTime(unixTime), 'hh:mm')
+  return format(fromUnixTime(unixTime), 'h:mm')
 }
 
 function sentenceCase(string) {
@@ -31,7 +35,8 @@ function renderDetails(item) {
       </div>
       <div className="label">{label}</div>
       <div className="number">
-        {data} {unit}
+        {data}
+        <span> {unit}</span>
       </div>
     </CurrentWeatherElement>
   )
@@ -49,13 +54,13 @@ const CurrentWeather = ({ weatherData }) => {
     {
       label: 'Feels like',
       data: Math.floor(feels_like),
-      unit: '°F',
+      unit: '°',
       icon: faThermometerHalf
     },
     {
       label: 'Wind',
       data: wind.speed,
-      unit: 'ml/h',
+      unit: 'mph',
       icon: faWind
     },
     {
@@ -66,8 +71,8 @@ const CurrentWeather = ({ weatherData }) => {
     },
     {
       label: 'Visibility',
-      data: visibility,
-      unit: 'm',
+      data: convertMeterToMile(visibility),
+      unit: 'mi',
       icon: faEye
     },
     {
@@ -92,7 +97,7 @@ const CurrentWeather = ({ weatherData }) => {
           <div className="left">
             <i className={`owi owi-${icon}`} />
             <div className="temp-and-description">
-              <div className="temp">{Math.floor(temp)} °F</div>
+              <div className="temp">{Math.floor(temp)}°</div>
               <div className="description">{sentenceCase(description)}</div>
             </div>
           </div>

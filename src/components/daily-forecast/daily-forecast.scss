@@ -1,12 +1,12 @@
 .daily-forecast {
   background: rgba(255, 255, 255, 0.2);
-  flex-grow: 1;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  flex-grow: 1;
   border-radius: 1rem;
-  padding: 0.5rem;
+  padding: 0.5rem 0;
   margin: 0 0.5rem;
   font-size: 14px;
   line-height: 22px;
@@ -21,12 +21,16 @@
 
   .rain-volume {
     height: 20px;
+    .value {
+      font-size: 12px;
+      color: #8ed9ed;
+    }
   }
 
   .weather-icon i {
     font-size: 40px;
     font-weight: 100;
-    padding: 10px;
+    padding: 0 10px 10px 10px;
   }
 
   .min-temp {
@@ -38,5 +42,7 @@
 @media screen and (max-width: 960px) {
   .daily-forecast {
     background: none;
+    padding: 0;
+    margin: 0;
   }
 }

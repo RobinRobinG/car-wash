@@ -32,6 +32,7 @@ const IndexPage = () => {
   const { weatherData: fiveDayWeatherForecast } = useFiveDayWeatherForecast()
   const { weatherData: currentWeatherForecast } = useCurrentWeatherForecast()
 
+  const city = 'hello'
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
@@ -46,7 +47,7 @@ const IndexPage = () => {
     <div className="site-container">
       <Header siteTitle={data.site.siteMetadata.title} />
       <Main result={getResult(fiveDayWeatherForecast)} />
-      <CurrentWeather weatherData={currentWeatherForecast} />
+      <CurrentWeather weatherData={currentWeatherForecast} city={city} />
       <WeatherForecast weatherData={fiveDayWeatherForecast} />
       <Footer />
     </div>
