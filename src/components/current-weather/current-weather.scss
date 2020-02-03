@@ -60,6 +60,9 @@
 
 @media screen and (max-width: 960px) {
   .current-weather {
+    .container {
+      border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    }
     h4 {
       margin: 0.5rem 1rem;
     }
