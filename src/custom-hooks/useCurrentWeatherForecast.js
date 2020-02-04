@@ -3,7 +3,7 @@ import { usePosition } from './usePosition'
 
 const useCurrentWeatherForecast = () => {
   const { latitude, longitude } = usePosition()
-  const [currentWeather, setCurrentWeather] = useState({})
+  const [currentWeatherData, setCurrentWeatherData] = useState({})
   const [error, setError] = useState(null)
 
   useEffect(() => {
@@ -17,16 +17,15 @@ const useCurrentWeatherForecast = () => {
           `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&APPID=${process.env.GATSBY_OPEN_WEATHER_MAP_API_KEY}&units=imperial`
         )
         const json = await response.json()
-        setCurrentWeather(json)
+        setCurrentWeatherData(json)
       } catch (error) {
         setError(error)
       }
     }
-
     getWeatherData()
   }, [latitude, longitude])
 
-  return { weatherData: currentWeather, error }
+  return { currentWeatherData, error }
 }
 
 export default useCurrentWeatherForecast

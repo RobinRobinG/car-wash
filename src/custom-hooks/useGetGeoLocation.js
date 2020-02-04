@@ -3,13 +3,11 @@ import { usePosition } from './usePosition'
 
 const useGetGeoLocation = () => {
   const { latitude, longitude } = usePosition()
-  const [city, setCity] = useState({})
+  const [location, setLocation] = useState({})
 
   useEffect(() => {
     async function getCityData() {
-      if (!latitude || !longitude) {
-        return
-      }
+      if (!latitude || !longitude) return
 
       const geoDbGetCitiesUrl = `https://wft-geo-db.p.rapidapi.com/v1/geo/cities?limit=1&location=${latitude}${longitude}&radius=50`
 
@@ -24,15 +22,15 @@ const useGetGeoLocation = () => {
       }
 
       const response = await fetch(geoDbGetCitiesUrl, fetchOptions)
-      const json = await response.json()
-      const { data } = json
-      setCity(data[0].city)
+      const { data } = await response.json()
+      const city = data[0].name
+      setLocation(city)
     }
 
     getCityData()
   }, [latitude, longitude])
 
-  return { city }
+  return { location }
 }
 
 export default useGetGeoLocation

@@ -21,12 +21,11 @@ function renderWeatherList(list) {
   )
 }
 
-const WeatherForecast = ({ weatherData }) => {
-  console.log({ weatherData })
-  if (!weatherData.cod) {
-    return <div>Loading...</div>
+const WeatherForecast = ({ fiveDayWeatherData }) => {
+  if (fiveDayWeatherData.cod !== '200') {
+    return <div className="weather-forecast"></div>
   }
-  const { list } = weatherData
+  const { list } = fiveDayWeatherData
 
   return (
     <div className="weather-forecast">

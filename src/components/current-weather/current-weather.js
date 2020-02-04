@@ -42,14 +42,17 @@ function renderDetails(item) {
   )
 }
 
-const CurrentWeather = ({ weatherData }) => {
-  if (!weatherData.cod) {
-    return <div>Loading...</div>
+const CurrentWeather = ({ currentWeatherData, fiveDayWeatherData }) => {
+  if (currentWeatherData.cod !== '200' && fiveDayWeatherData.cod !== '200') {
+    return null
   }
-  const { weather, main, visibility, wind, sys } = weatherData
+  const { weather, main, visibility, wind, sys } = currentWeatherData
   const { icon, description } = weather[0]
   const { temp, feels_like, humidity } = main
   const { sunrise, sunset } = sys
+  const {
+    city: { name }
+  } = fiveDayWeatherData
   const weatherDetails = [
     {
       label: 'Feels like',
@@ -92,7 +95,7 @@ const CurrentWeather = ({ weatherData }) => {
   return (
     <div className="current-weather">
       <Container>
-        <h4>Today's weather forecast</h4>
+        <h4>Today's weather forecast for {name}</h4>
         <div className="weather-details">
           <div className="left">
             <i className={`owi owi-${icon}`} />

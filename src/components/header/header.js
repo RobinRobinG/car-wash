@@ -6,8 +6,7 @@ import TodayDate from '../today-date/today-date'
 import Logo from '../../assets/logo.svg'
 import './header.scss'
 
-const Header = ({ siteTitle, city }) => {
-  console.log({ city })
+const Header = ({ siteTitle }) => {
   return (
     <header className="header">
       <Container>
@@ -17,10 +16,7 @@ const Header = ({ siteTitle, city }) => {
           </div>
           <h1>{siteTitle}</h1>
         </Link>
-        <div className="city-and-date">
-          <div>{city}</div>
-          <TodayDate />
-        </div>
+        <TodayDate />
       </Container>
     </header>
   )

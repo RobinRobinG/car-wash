@@ -30,12 +30,6 @@
       margin: 0;
     }
   }
-
-  .city-and-date {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-  }
 }
 
 @media screen and (max-width: 960px) {
@@ -45,11 +39,6 @@
     }
     .container {
       flex-direction: column;
-      .city-and-date {
-        flex-direction: row;
-        align-items: center;
-        font-size: 14px;
-      }
     }
   }
 }

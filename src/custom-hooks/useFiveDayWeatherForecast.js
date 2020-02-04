@@ -3,7 +3,7 @@ import { usePosition } from './usePosition'
 
 const useFiveDayWeatherForecast = () => {
   const { latitude, longitude } = usePosition()
-  const [fiveDayWeather, setFiveDayWeather] = useState({})
+  const [fiveDayWeatherData, setFiveDayWeatherData] = useState({})
   const [error, setError] = useState(null)
 
   useEffect(() => {
@@ -17,7 +17,7 @@ const useFiveDayWeatherForecast = () => {
           `https://api.openweathermap.org/data/2.5/forecast?lat=${latitude}&lon=${longitude}&APPID=${process.env.GATSBY_OPEN_WEATHER_MAP_API_KEY}&units=imperial`
         )
         const json = await response.json()
-        setFiveDayWeather(json)
+        setFiveDayWeatherData(json)
       } catch (error) {
         setError(error)
       }
@@ -26,7 +26,7 @@ const useFiveDayWeatherForecast = () => {
     getWeatherData()
   }, [latitude, longitude])
 
-  return { weatherData: fiveDayWeather, error }
+  return { fiveDayWeatherData, error }
 }
 
 export default useFiveDayWeatherForecast
