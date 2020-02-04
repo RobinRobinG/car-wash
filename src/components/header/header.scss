@@ -7,36 +7,49 @@
     align-items: center;
   }
 
-  .logo {
-    width: 35px;
-    height: auto;
-    line-height: 0;
-    margin-right: 10px;
-    svg {
-      fill: #f9f1f1;
-    }
-  }
-
-  h1 {
-    font-size: 18pt;
-    font-weight: 400;
-    margin: 0;
-  }
-
   .link {
     display: flex;
     justify-content: flex-start;
     align-items: center;
     color: #f9f1f1;
     text-decoration: none;
+
+    .logo {
+      width: 35px;
+      height: auto;
+      line-height: 0;
+      margin-right: 10px;
+      svg {
+        fill: #f9f1f1;
+      }
+    }
+
+    h1 {
+      font-size: 18pt;
+      font-weight: 400;
+      margin: 0;
+    }
+  }
+
+  .city-and-date {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
   }
 }
 
 @media screen and (max-width: 960px) {
-  .header .link {
-    justify-content: center;
-  }
-  .container {
-    flex-direction: column;
+  .header {
+    .link {
+      justify-content: center;
+    }
+    .container {
+      flex-direction: column;
+      .city-and-date {
+        flex-direction: row;
+        align-items: center;
+        font-size: 14px;
+      }
+    }
   }
 }

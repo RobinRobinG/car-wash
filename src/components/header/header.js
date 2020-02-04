@@ -6,19 +6,25 @@ import TodayDate from '../today-date/today-date'
 import Logo from '../../assets/logo.svg'
 import './header.scss'
 
-const Header = ({ siteTitle }) => (
-  <header className="header">
-    <Container>
-      <Link to="/" className="link">
-        <div className="logo">
-          <Logo />
+const Header = ({ siteTitle, city }) => {
+  console.log({ city })
+  return (
+    <header className="header">
+      <Container>
+        <Link to="/" className="link">
+          <div className="logo">
+            <Logo />
+          </div>
+          <h1>{siteTitle}</h1>
+        </Link>
+        <div className="city-and-date">
+          <div>{city}</div>
+          <TodayDate />
         </div>
-        <h1>{siteTitle}</h1>
-      </Link>
-      <TodayDate />
-    </Container>
-  </header>
-)
+      </Container>
+    </header>
+  )
+}
 
 Header.propTypes = {
   siteTitle: PropTypes.string

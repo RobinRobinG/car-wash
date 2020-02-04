@@ -7,7 +7,7 @@ export const usePosition = () => {
   const onChange = ({ coords }) => {
     setPosition({
       latitude: coords.latitude,
-      longitude: coords.longitude,
+      longitude: coords.longitude
     })
   }
 
@@ -24,6 +24,6 @@ export const usePosition = () => {
     const watcher = geo.watchPosition(onChange, onError)
     return () => geo.clearWatch(watcher)
   }, [])
-  
+
   return { ...position, error }
 }
