@@ -1,8 +1,9 @@
-.site-container {
+/* .site-container {
+  background: linear-gradient(#4065a4, #cfada7);
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-}
+} */
 .loading {
   margin: 20px auto;
 }
@@ -10,7 +11,7 @@ html {
   font-family: Arial, Helvetica, sans-serif;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
-  background: linear-gradient(#4065a4, #cfada7);
+  background: #363636;
   min-height: 100vh;
 }
 body {

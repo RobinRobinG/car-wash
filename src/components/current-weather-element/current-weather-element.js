@@ -2,7 +2,7 @@ import React from 'react'
 import classNames from 'classnames'
 import './current-weather-element.scss'
 
-const currentWeatherElement = ({ children, className }) => {
+const CurrentWeatherElement = ({ children, className }) => {
   return (
     <div className={classNames(className, 'current-weather-element')}>
       {children}
@@ -10,4 +10,4 @@ const currentWeatherElement = ({ children, className }) => {
   )
 }
 
-export default currentWeatherElement
+export default CurrentWeatherElement

@@ -1,0 +1,18 @@
+.gradient-background {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background: linear-gradient(#4065a4, #cfada7);
+  &.blue-gray {
+    background: linear-gradient(#8ba1b0, #4f4d4c);
+  }
+  &.blue-yellow {
+    background: linear-gradient(#0f93f7, #cea44f);
+  }
+  &.orange-yellow {
+    background: linear-gradient(#e07030, #b1965f);
+  }
+  &.purple-red {
+    background: linear-gradient(#820f63, #fa5039);
+  }
+}

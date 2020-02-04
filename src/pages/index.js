@@ -1,7 +1,7 @@
 import React from 'react'
-import { useStaticQuery, graphql } from 'gatsby'
 import useFiveDayWeatherForecast from '../custom-hooks/useFiveDayWeatherForecast'
 import useCurrentWeatherForecast from '../custom-hooks/useCurrentWeatherForecast'
+import GradientBackground from '../components/gradient-background/gradient-background'
 import Header from '../components/header/header'
 import Main from '../components/main/main'
 import WeatherForecast from '../components/weather-forecast/weather-forecast'
@@ -32,19 +32,14 @@ const IndexPage = () => {
   const { fiveDayWeatherData } = useFiveDayWeatherForecast()
   const { currentWeatherData } = useCurrentWeatherForecast()
 
-  const data = useStaticQuery(graphql`
-    query SiteTitleQuery {
-      site {
-        siteMetadata {
-          title
-        }
-      }
-    }
-  `)
+  let currentTemperature = 32
+  if (currentWeatherData.cod === '200') {
+    return (currentTemperature = currentWeatherData.main.temp)
+  }
 
   return (
-    <div className="site-container">
-      <Header siteTitle={data.site.siteMetadata.title} />
+    <GradientBackground currentTemperature={currentTemperature}>
+      <Header />
       <Main result={getResult(fiveDayWeatherData)} />
       <CurrentWeather
         fiveDayWeatherData={fiveDayWeatherData}
@@ -52,7 +47,7 @@ const IndexPage = () => {
       />
       <WeatherForecast fiveDayWeatherData={fiveDayWeatherData} />
       <Footer />
-    </div>
+    </GradientBackground>
   )
 }
 

@@ -46,6 +46,7 @@ const CurrentWeather = ({ currentWeatherData, fiveDayWeatherData }) => {
   if (currentWeatherData.cod !== '200' && fiveDayWeatherData.cod !== '200') {
     return null
   }
+  
   const { weather, main, visibility, wind, sys } = currentWeatherData
   const { icon, description } = weather[0]
   const { temp, feels_like, humidity } = main
