@@ -33,8 +33,8 @@ const IndexPage = () => {
   const { currentWeatherData } = useCurrentWeatherForecast()
 
   let currentTemperature = 32
-  if (currentWeatherData.cod === '200') {
-    return (currentTemperature = currentWeatherData.main.temp)
+  if (currentWeatherData && currentWeatherData.cod === 200) {
+    currentTemperature = currentWeatherData.main.temp
   }
 
   return (

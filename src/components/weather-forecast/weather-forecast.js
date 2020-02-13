@@ -22,7 +22,7 @@ function renderWeatherList(list) {
 }
 
 const WeatherForecast = ({ fiveDayWeatherData }) => {
-  if (fiveDayWeatherData.cod !== '200') {
+  if (!fiveDayWeatherData || fiveDayWeatherData.cod !== '200') {
     return <div className="weather-forecast"></div>
   }
   const { list } = fiveDayWeatherData

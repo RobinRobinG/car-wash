@@ -43,10 +43,15 @@ function renderDetails(item) {
 }
 
 const CurrentWeather = ({ currentWeatherData, fiveDayWeatherData }) => {
-  if (currentWeatherData.cod !== '200' && fiveDayWeatherData.cod !== '200') {
-    return null
+  if (
+    !currentWeatherData ||
+    currentWeatherData.cod !== 200 ||
+    !fiveDayWeatherData ||
+    fiveDayWeatherData.cod !== '200'
+  ) {
+    return <div className="current-weather"></div>
   }
-  
+
   const { weather, main, visibility, wind, sys } = currentWeatherData
   const { icon, description } = weather[0]
   const { temp, feels_like, humidity } = main

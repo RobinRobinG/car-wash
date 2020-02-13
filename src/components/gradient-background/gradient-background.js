@@ -11,7 +11,7 @@ const GradientBackground = ({ currentTemperature, children }) => {
   let gradientColor
   if (temperatureInCelsius <= 4) {
     gradientColor = 'blue-gray'
-  } else if (temperatureInCelsius <= 20 && temperatureInCelsius > 5) {
+  } else if (temperatureInCelsius <= 20 && temperatureInCelsius > 4) {
     gradientColor = 'blue-yellow'
   } else if (temperatureInCelsius <= 31 && temperatureInCelsius > 20) {
     gradientColor = 'orange-yellow'
