@@ -1,9 +1,9 @@
 {
-  "name": "gatsby-starter-default",
+  "name": "wash-me-maybe",
   "private": true,
-  "description": "A simple starter to get up and developing quickly with Gatsby",
+  "description": "A simple app that uses geo-location and weather forecast APIs to answer a simple question of weather you should wash your car at the moment.",
   "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "author": "Robin Guan <hello@robinguan.com>",
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.26",
     "@fortawesome/free-solid-svg-icons": "^5.12.0",

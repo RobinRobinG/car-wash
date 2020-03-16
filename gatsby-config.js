@@ -2,7 +2,7 @@ module.exports = {
   siteMetadata: {
     title: `Wash me, maybe?`,
     description: `an app that uses geo-location and weather forecast APIs to answer a simple question of weather you should wash your car at the moment.`,
-    author: `@gatsbyjs`
+    author: `Robin Guan <hello@robinguan.com>`
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
